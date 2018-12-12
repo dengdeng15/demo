@@ -1,0 +1,23 @@
+person:
+  name: dd_${random.int[0,10]}
+  age: 18
+  birth: 2000/01/01
+  like:
+    - cat
+    - dog
+  book: [abc, def]
+  map: {k1: value1, k2: value2}
+  dog:
+    name: wangcai
+    age: ${person.age}
+
+spring:
+  output:
+    ansi:
+      enabled: always
+company:
+  name: alibaba
+  addr: Hangzhou
+  boss: Mayun
+  age: 10
+  email: 123@ccb.com
