@@ -21,7 +21,7 @@ public class DemoApplicationTests {
     Person person;
 
     @Autowired
-    Company company;
+    private Company company;
 
     @Test
     public void contextLoads() {

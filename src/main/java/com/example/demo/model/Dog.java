@@ -6,7 +6,8 @@ import org.springframework.stereotype.Component;
 
 /*
  * 使用@PropertySource引入外部配置文件时，只能是properties的文件不能是yml文件
- * 当外部配置文件和默认的application.properties/application.yml文件中有相同前缀的属性，则application中属性会覆盖外部配置文件中相同前缀的属性
+ * 当外部配置文件和默认的application.properties/application.yml文件中有相同前缀的属性，
+ * 则application中属性会覆盖外部配置文件中相同前缀的属性
  */
 @Component
 @PropertySource(value = {"classpath:dog.properties"})
