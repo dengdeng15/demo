@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> <!--添加thymeleaf的命名空间-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span th:text="${test}"></span>
+<hr>
+<span th:text="'person的信息'"></span><br>  <!--常量字符串-->
+<span th:text="${'name:' + p.name}"></span><br>
+<span th:text="${#strings.toUpperCase(p.name)}"></span><br>
+<span th:text="${p.age}"></span><br>
+<span th:text="${p.age - 5}"></span><br>
+<span th:text="${#dates.format(p.birth, 'yyyy-MM-dd')}"></span><br>
+<hr>
+<span th:text="${p.name + '|@|' + test}"></span><br>
+<a th:href="@{/index.html(name=${p.name}, age=${p.age})}">跳转至登录页面(resources/static/index.html)</a><br> <!--name和age分别是传递的参数,此时是跳转到resources下面的static/index.html-->
+<a th:href="@{/toLogin(name=${p.name})}">跳转至登录页面(templates/index.html)</a>
+<hr>
+<img th:src="@{/images/bg1.jpg}" th:width="500"/>  <!--使用@{}引用地址，直接使用绝对路径，在渲染时会自动添加上当前Web应用的Context名字-->
+<hr>
+<span th:text="${p.name}"></span><br>
+<hr>
+<div th:object="${p}">
+    <p>Name: <span th:text="*{name}">Sebastian</span>.</p>
+    <p>age: <span th:text="*{age}">Pepper</span>.</p>
+    <p>birth: <span th:text="*{birth}">Saturn</span>.</p>
+</div>
+<hr>判断
+<div th:if="${p.age} &gt;= 18">成年人</div>
+<div th:if="${p.age} &lt; 18">未成年人</div>
+<span th:text="'三元表达式：此人年龄为' + ${p.age} + ',他是：' + (${p.age} &gt;= 18 ? '成年人' : '未成年人')"></span>
+<hr>循环
+<div>
+<!--    <span th:each="p : ${list}">
+        <span th:text="${p.name}"></span>
+    </span>-->
+    <table>
+        <tr data-th-each="p : ${list}" th:border="1">
+            <td data-th-text="${p.name}"></td>
+            <td data-th-text="${p.age}"></td>
+            <td data-th-text="${#dates.format(p.birth, 'yyyy-MM-dd')}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

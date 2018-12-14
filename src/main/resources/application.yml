@@ -1,3 +1,4 @@
+
 person:
   name: dd_${random.int[0,10]}
   age: 18
@@ -15,9 +16,16 @@ spring:
   output:
     ansi:
       enabled: always
+  profiles:
+    active: dev
 company:
   name: alibaba
   addr: Hangzhou
   boss: Mayun
   age: 10
   email: 123@ccb.com
+---
+spring:
+     profiles: dev
+     thymeleaf:
+       cache: false
