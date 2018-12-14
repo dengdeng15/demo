@@ -34,17 +34,21 @@
 	<div class="avtar">
 		<img src="images/avtar.png" />
 	</div>
-			<form>
-					<input type="text" class="text" value="Username" th:value="${name}"
-                           onfocus="if (this.value == 'Username') {this.value = ''};"
-						   onblur="if (this.value == '') {this.value = 'Username';}" >
-						<div class="key">
-					<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
-						</div>
-			</form>
-	<div class="signin">
-		<input type="submit" value="Login">
-	</div>
+    <div>
+        <form action="#" th:action="@{/login}"  method="post">
+            <input type="text" class="text" value="Username" th:value="${name}"
+                   onfocus="if (this.value == 'Username') {this.value = ''};"
+                   onblur="if (this.value == '') {this.value = 'Username';}" >
+            <div class="key">
+                <input type="password" value="Password" th:name="'password'"
+                       onfocus="this.value = '';"
+                       onblur="if (this.value == '') {this.value = 'Password';}">
+            </div>
+            <div class="signin">
+                <input type="submit" value="Login">
+            </div>
+        </form>
+    </div>
 </div>
  <div class="copy-rights">
 					<p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>

@@ -41,7 +41,7 @@ public class PersonController {
     }
 
     @RequestMapping("/toLogin")
-    public String toLogin(@RequestParam(name = "name") String name,
+    public String toLogin(@RequestParam("name") String name,
                           Model model) {
         model.addAttribute("name", name);
         return "index";
@@ -50,7 +50,10 @@ public class PersonController {
     @RequestMapping("/login")
     public String login(@ModelAttribute Person person,
                         Model model) {
-        model.addAttribute("name", person.getName());
-        return "test";
+        System.out.println("tttt");
+        String name = person.getName();
+        System.out.println(name);
+        model.addAttribute("name", name);
+        return "loginSuccess";
     }
 }
