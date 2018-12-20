@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.data.mapper.FndMngOviewMapper" >
+  <resultMap id="BaseResultMap" type="com.example.demo.data.entity.FndMngOview" >
+    <result column="yhmngcode" property="yhmngcode" jdbcType="VARCHAR" />
+    <result column="mngcode" property="mngcode" jdbcType="VARCHAR" />
+    <result column="f_sname" property="fSname" jdbcType="VARCHAR" />
+    <result column="f_ename" property="fEname" jdbcType="VARCHAR" />
+    <result column="f_fname" property="fFname" jdbcType="VARCHAR" />
+    <result column="spell" property="spell" jdbcType="VARCHAR" />
+    <result column="setupdate" property="setupdate" jdbcType="DATE" />
+    <result column="registplace" property="registplace" jdbcType="VARCHAR" />
+    <result column="registcity" property="registcity" jdbcType="VARCHAR" />
+    <result column="mainoffice" property="mainoffice" jdbcType="VARCHAR" />
+    <result column="mainofficecity" property="mainofficecity" jdbcType="VARCHAR" />
+    <result column="businessscope" property="businessscope" jdbcType="VARCHAR" />
+    <result column="capital" property="capital" jdbcType="INTEGER" />
+    <result column="managertype" property="managertype" jdbcType="INTEGER" />
+    <result column="historyprogress" property="historyprogress" jdbcType="VARCHAR" />
+    <result column="postcode" property="postcode" jdbcType="VARCHAR" />
+    <result column="chiefphone" property="chiefphone" jdbcType="VARCHAR" />
+    <result column="chieffox" property="chieffox" jdbcType="VARCHAR" />
+    <result column="web" property="web" jdbcType="VARCHAR" />
+    <result column="mail" property="mail" jdbcType="VARCHAR" />
+    <result column="servicephone" property="servicephone" jdbcType="VARCHAR" />
+    <result column="servicefox" property="servicefox" jdbcType="VARCHAR" />
+    <result column="createtimestamp" property="createtimestamp" jdbcType="VARCHAR" />
+    <result column="updatetimestamp" property="updatetimestamp" jdbcType="VARCHAR" />
+    <result column="removetag" property="removetag" jdbcType="CHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.example.demo.data.entity.FndMngOview" >
+    insert into icsp_fndmng_oview (yhmngcode, mngcode, f_sname, 
+      f_ename, f_fname, spell, 
+      setupdate, registplace, registcity, 
+      mainoffice, mainofficecity, businessscope, 
+      capital, managertype, historyprogress, 
+      postcode, chiefphone, chieffox, 
+      web, mail, servicephone, 
+      servicefox, createtimestamp, updatetimestamp, 
+      removetag)
+    values (#{yhmngcode,jdbcType=VARCHAR}, #{mngcode,jdbcType=VARCHAR}, #{fSname,jdbcType=VARCHAR}, 
+      #{fEname,jdbcType=VARCHAR}, #{fFname,jdbcType=VARCHAR}, #{spell,jdbcType=VARCHAR}, 
+      #{setupdate,jdbcType=DATE}, #{registplace,jdbcType=VARCHAR}, #{registcity,jdbcType=VARCHAR}, 
+      #{mainoffice,jdbcType=VARCHAR}, #{mainofficecity,jdbcType=VARCHAR}, #{businessscope,jdbcType=VARCHAR}, 
+      #{capital,jdbcType=INTEGER}, #{managertype,jdbcType=INTEGER}, #{historyprogress,jdbcType=VARCHAR}, 
+      #{postcode,jdbcType=VARCHAR}, #{chiefphone,jdbcType=VARCHAR}, #{chieffox,jdbcType=VARCHAR}, 
+      #{web,jdbcType=VARCHAR}, #{mail,jdbcType=VARCHAR}, #{servicephone,jdbcType=VARCHAR}, 
+      #{servicefox,jdbcType=VARCHAR}, #{createtimestamp,jdbcType=VARCHAR}, #{updatetimestamp,jdbcType=VARCHAR}, 
+      #{removetag,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.demo.data.entity.FndMngOview" >
+    insert into icsp_fndmng_oview
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="yhmngcode != null" >
+        yhmngcode,
+      </if>
+      <if test="mngcode != null" >
+        mngcode,
+      </if>
+      <if test="fSname != null" >
+        f_sname,
+      </if>
+      <if test="fEname != null" >
+        f_ename,
+      </if>
+      <if test="fFname != null" >
+        f_fname,
+      </if>
+      <if test="spell != null" >
+        spell,
+      </if>
+      <if test="setupdate != null" >
+        setupdate,
+      </if>
+      <if test="registplace != null" >
+        registplace,
+      </if>
+      <if test="registcity != null" >
+        registcity,
+      </if>
+      <if test="mainoffice != null" >
+        mainoffice,
+      </if>
+      <if test="mainofficecity != null" >
+        mainofficecity,
+      </if>
+      <if test="businessscope != null" >
+        businessscope,
+      </if>
+      <if test="capital != null" >
+        capital,
+      </if>
+      <if test="managertype != null" >
+        managertype,
+      </if>
+      <if test="historyprogress != null" >
+        historyprogress,
+      </if>
+      <if test="postcode != null" >
+        postcode,
+      </if>
+      <if test="chiefphone != null" >
+        chiefphone,
+      </if>
+      <if test="chieffox != null" >
+        chieffox,
+      </if>
+      <if test="web != null" >
+        web,
+      </if>
+      <if test="mail != null" >
+        mail,
+      </if>
+      <if test="servicephone != null" >
+        servicephone,
+      </if>
+      <if test="servicefox != null" >
+        servicefox,
+      </if>
+      <if test="createtimestamp != null" >
+        createtimestamp,
+      </if>
+      <if test="updatetimestamp != null" >
+        updatetimestamp,
+      </if>
+      <if test="removetag != null" >
+        removetag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="yhmngcode != null" >
+        #{yhmngcode,jdbcType=VARCHAR},
+      </if>
+      <if test="mngcode != null" >
+        #{mngcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fSname != null" >
+        #{fSname,jdbcType=VARCHAR},
+      </if>
+      <if test="fEname != null" >
+        #{fEname,jdbcType=VARCHAR},
+      </if>
+      <if test="fFname != null" >
+        #{fFname,jdbcType=VARCHAR},
+      </if>
+      <if test="spell != null" >
+        #{spell,jdbcType=VARCHAR},
+      </if>
+      <if test="setupdate != null" >
+        #{setupdate,jdbcType=DATE},
+      </if>
+      <if test="registplace != null" >
+        #{registplace,jdbcType=VARCHAR},
+      </if>
+      <if test="registcity != null" >
+        #{registcity,jdbcType=VARCHAR},
+      </if>
+      <if test="mainoffice != null" >
+        #{mainoffice,jdbcType=VARCHAR},
+      </if>
+      <if test="mainofficecity != null" >
+        #{mainofficecity,jdbcType=VARCHAR},
+      </if>
+      <if test="businessscope != null" >
+        #{businessscope,jdbcType=VARCHAR},
+      </if>
+      <if test="capital != null" >
+        #{capital,jdbcType=INTEGER},
+      </if>
+      <if test="managertype != null" >
+        #{managertype,jdbcType=INTEGER},
+      </if>
+      <if test="historyprogress != null" >
+        #{historyprogress,jdbcType=VARCHAR},
+      </if>
+      <if test="postcode != null" >
+        #{postcode,jdbcType=VARCHAR},
+      </if>
+      <if test="chiefphone != null" >
+        #{chiefphone,jdbcType=VARCHAR},
+      </if>
+      <if test="chieffox != null" >
+        #{chieffox,jdbcType=VARCHAR},
+      </if>
+      <if test="web != null" >
+        #{web,jdbcType=VARCHAR},
+      </if>
+      <if test="mail != null" >
+        #{mail,jdbcType=VARCHAR},
+      </if>
+      <if test="servicephone != null" >
+        #{servicephone,jdbcType=VARCHAR},
+      </if>
+      <if test="servicefox != null" >
+        #{servicefox,jdbcType=VARCHAR},
+      </if>
+      <if test="createtimestamp != null" >
+        #{createtimestamp,jdbcType=VARCHAR},
+      </if>
+      <if test="updatetimestamp != null" >
+        #{updatetimestamp,jdbcType=VARCHAR},
+      </if>
+      <if test="removetag != null" >
+        #{removetag,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

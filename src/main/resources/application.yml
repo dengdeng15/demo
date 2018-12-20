@@ -18,12 +18,27 @@ spring:
       enabled: always
   profiles:
     active: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/icspnlp?serverTimezone=GMT
+    username: root
+    password: dengyaowen
+    driver-class-name: com.mysql.jdbc.Driver
+  data:
+    neo4j:
+      uri: bolt://localhost:7687
+      username: neo4j
+      password: 111111
 company:
   name: alibaba
   addr: Hangzhou
   boss: Mayun
   age: 10
   email: 123@ccb.com
+#myBatis 配置
+mybatis:
+  type-aliases-package: com.example.demo.entity
+  mapper-locations: classpath:mapper/*.xml
+
 ---
 spring:
      profiles: dev

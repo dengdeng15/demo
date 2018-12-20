@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.data.mapper.FndMngTrusteMapper" >
+  <resultMap id="BaseResultMap" type="com.example.demo.data.entity.FndMngTruste" >
+    <result column="yhorgcode" property="yhorgcode" jdbcType="VARCHAR" />
+    <result column="orgcode" property="orgcode" jdbcType="VARCHAR" />
+    <result column="bankseq" property="bankseq" jdbcType="INTEGER" />
+    <result column="bankname" property="bankname" jdbcType="VARCHAR" />
+    <result column="banksname" property="banksname" jdbcType="VARCHAR" />
+    <result column="businessscope" property="businessscope" jdbcType="VARCHAR" />
+    <result column="chiefphone" property="chiefphone" jdbcType="VARCHAR" />
+    <result column="chieffox" property="chieffox" jdbcType="VARCHAR" />
+    <result column="postcode" property="postcode" jdbcType="VARCHAR" />
+    <result column="web" property="web" jdbcType="VARCHAR" />
+    <result column="mail" property="mail" jdbcType="VARCHAR" />
+    <result column="servicephone" property="servicephone" jdbcType="VARCHAR" />
+    <result column="servicefox" property="servicefox" jdbcType="VARCHAR" />
+    <result column="bankename" property="bankename" jdbcType="VARCHAR" />
+    <result column="f_type" property="fType" jdbcType="INTEGER" />
+    <result column="registplace" property="registplace" jdbcType="VARCHAR" />
+    <result column="f_office" property="fOffice" jdbcType="VARCHAR" />
+    <result column="setupdate" property="setupdate" jdbcType="DATE" />
+    <result column="authdate" property="authdate" jdbcType="DATE" />
+    <result column="f_capital" property="fCapital" jdbcType="DECIMAL" />
+    <result column="f_comment" property="fComment" jdbcType="VARCHAR" />
+    <result column="revealtime" property="revealtime" jdbcType="DATE" />
+    <result column="banksurl" property="banksurl" jdbcType="VARCHAR" />
+    <result column="createtimestamp" property="createtimestamp" jdbcType="VARCHAR" />
+    <result column="updatetimestamp" property="updatetimestamp" jdbcType="VARCHAR" />
+    <result column="removetag" property="removetag" jdbcType="CHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.example.demo.data.entity.FndMngTruste" >
+    insert into icsp_fndmng_truste (yhorgcode, orgcode, bankseq, 
+      bankname, banksname, businessscope, 
+      chiefphone, chieffox, postcode, 
+      web, mail, servicephone, 
+      servicefox, bankename, f_type, 
+      registplace, f_office, setupdate, 
+      authdate, f_capital, f_comment, 
+      revealtime, banksurl, createtimestamp, 
+      updatetimestamp, removetag)
+    values (#{yhorgcode,jdbcType=VARCHAR}, #{orgcode,jdbcType=VARCHAR}, #{bankseq,jdbcType=INTEGER}, 
+      #{bankname,jdbcType=VARCHAR}, #{banksname,jdbcType=VARCHAR}, #{businessscope,jdbcType=VARCHAR}, 
+      #{chiefphone,jdbcType=VARCHAR}, #{chieffox,jdbcType=VARCHAR}, #{postcode,jdbcType=VARCHAR}, 
+      #{web,jdbcType=VARCHAR}, #{mail,jdbcType=VARCHAR}, #{servicephone,jdbcType=VARCHAR}, 
+      #{servicefox,jdbcType=VARCHAR}, #{bankename,jdbcType=VARCHAR}, #{fType,jdbcType=INTEGER}, 
+      #{registplace,jdbcType=VARCHAR}, #{fOffice,jdbcType=VARCHAR}, #{setupdate,jdbcType=DATE}, 
+      #{authdate,jdbcType=DATE}, #{fCapital,jdbcType=DECIMAL}, #{fComment,jdbcType=VARCHAR}, 
+      #{revealtime,jdbcType=DATE}, #{banksurl,jdbcType=VARCHAR}, #{createtimestamp,jdbcType=VARCHAR}, 
+      #{updatetimestamp,jdbcType=VARCHAR}, #{removetag,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.demo.data.entity.FndMngTruste" >
+    insert into icsp_fndmng_truste
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="yhorgcode != null" >
+        yhorgcode,
+      </if>
+      <if test="orgcode != null" >
+        orgcode,
+      </if>
+      <if test="bankseq != null" >
+        bankseq,
+      </if>
+      <if test="bankname != null" >
+        bankname,
+      </if>
+      <if test="banksname != null" >
+        banksname,
+      </if>
+      <if test="businessscope != null" >
+        businessscope,
+      </if>
+      <if test="chiefphone != null" >
+        chiefphone,
+      </if>
+      <if test="chieffox != null" >
+        chieffox,
+      </if>
+      <if test="postcode != null" >
+        postcode,
+      </if>
+      <if test="web != null" >
+        web,
+      </if>
+      <if test="mail != null" >
+        mail,
+      </if>
+      <if test="servicephone != null" >
+        servicephone,
+      </if>
+      <if test="servicefox != null" >
+        servicefox,
+      </if>
+      <if test="bankename != null" >
+        bankename,
+      </if>
+      <if test="fType != null" >
+        f_type,
+      </if>
+      <if test="registplace != null" >
+        registplace,
+      </if>
+      <if test="fOffice != null" >
+        f_office,
+      </if>
+      <if test="setupdate != null" >
+        setupdate,
+      </if>
+      <if test="authdate != null" >
+        authdate,
+      </if>
+      <if test="fCapital != null" >
+        f_capital,
+      </if>
+      <if test="fComment != null" >
+        f_comment,
+      </if>
+      <if test="revealtime != null" >
+        revealtime,
+      </if>
+      <if test="banksurl != null" >
+        banksurl,
+      </if>
+      <if test="createtimestamp != null" >
+        createtimestamp,
+      </if>
+      <if test="updatetimestamp != null" >
+        updatetimestamp,
+      </if>
+      <if test="removetag != null" >
+        removetag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="yhorgcode != null" >
+        #{yhorgcode,jdbcType=VARCHAR},
+      </if>
+      <if test="orgcode != null" >
+        #{orgcode,jdbcType=VARCHAR},
+      </if>
+      <if test="bankseq != null" >
+        #{bankseq,jdbcType=INTEGER},
+      </if>
+      <if test="bankname != null" >
+        #{bankname,jdbcType=VARCHAR},
+      </if>
+      <if test="banksname != null" >
+        #{banksname,jdbcType=VARCHAR},
+      </if>
+      <if test="businessscope != null" >
+        #{businessscope,jdbcType=VARCHAR},
+      </if>
+      <if test="chiefphone != null" >
+        #{chiefphone,jdbcType=VARCHAR},
+      </if>
+      <if test="chieffox != null" >
+        #{chieffox,jdbcType=VARCHAR},
+      </if>
+      <if test="postcode != null" >
+        #{postcode,jdbcType=VARCHAR},
+      </if>
+      <if test="web != null" >
+        #{web,jdbcType=VARCHAR},
+      </if>
+      <if test="mail != null" >
+        #{mail,jdbcType=VARCHAR},
+      </if>
+      <if test="servicephone != null" >
+        #{servicephone,jdbcType=VARCHAR},
+      </if>
+      <if test="servicefox != null" >
+        #{servicefox,jdbcType=VARCHAR},
+      </if>
+      <if test="bankename != null" >
+        #{bankename,jdbcType=VARCHAR},
+      </if>
+      <if test="fType != null" >
+        #{fType,jdbcType=INTEGER},
+      </if>
+      <if test="registplace != null" >
+        #{registplace,jdbcType=VARCHAR},
+      </if>
+      <if test="fOffice != null" >
+        #{fOffice,jdbcType=VARCHAR},
+      </if>
+      <if test="setupdate != null" >
+        #{setupdate,jdbcType=DATE},
+      </if>
+      <if test="authdate != null" >
+        #{authdate,jdbcType=DATE},
+      </if>
+      <if test="fCapital != null" >
+        #{fCapital,jdbcType=DECIMAL},
+      </if>
+      <if test="fComment != null" >
+        #{fComment,jdbcType=VARCHAR},
+      </if>
+      <if test="revealtime != null" >
+        #{revealtime,jdbcType=DATE},
+      </if>
+      <if test="banksurl != null" >
+        #{banksurl,jdbcType=VARCHAR},
+      </if>
+      <if test="createtimestamp != null" >
+        #{createtimestamp,jdbcType=VARCHAR},
+      </if>
+      <if test="updatetimestamp != null" >
+        #{updatetimestamp,jdbcType=VARCHAR},
+      </if>
+      <if test="removetag != null" >
+        #{removetag,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

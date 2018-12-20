@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.data.mapper.FndProfileMapper" >
+  <resultMap id="BaseResultMap" type="com.example.demo.data.entity.FndProfile" >
+    <result column="yhcode" property="yhcode" jdbcType="VARCHAR" />
+    <result column="fundcode" property="fundcode" jdbcType="CHAR" />
+    <result column="marketcode" property="marketcode" jdbcType="VARCHAR" />
+    <result column="stockcodesh" property="stockcodesh" jdbcType="VARCHAR" />
+    <result column="stockcodesz" property="stockcodesz" jdbcType="VARCHAR" />
+    <result column="fundsname" property="fundsname" jdbcType="VARCHAR" />
+    <result column="spell" property="spell" jdbcType="VARCHAR" />
+    <result column="fundname" property="fundname" jdbcType="VARCHAR" />
+    <result column="pactinuredate" property="pactinuredate" jdbcType="DATE" />
+    <result column="estabdate" property="estabdate" jdbcType="DATE" />
+    <result column="fundclosedate" property="fundclosedate" jdbcType="DATE" />
+    <result column="estabscale" property="estabscale" jdbcType="DECIMAL" />
+    <result column="ccbestabscale" property="ccbestabscale" jdbcType="DECIMAL" />
+    <result column="fundtype" property="fundtype" jdbcType="INTEGER" />
+    <result column="transferagentmode" property="transferagentmode" jdbcType="INTEGER" />
+    <result column="transactmode" property="transactmode" jdbcType="INTEGER" />
+    <result column="operatemode" property="operatemode" jdbcType="INTEGER" />
+    <result column="firstassetnetvalue" property="firstassetnetvalue" jdbcType="DECIMAL" />
+    <result column="ccbfirstassetnetva" property="ccbfirstassetnetva" jdbcType="DECIMAL" />
+    <result column="firstholdercount" property="firstholdercount" jdbcType="DECIMAL" />
+    <result column="ccbfirstholdercnt" property="ccbfirstholdercnt" jdbcType="DECIMAL" />
+    <result column="enrolorgan" property="enrolorgan" jdbcType="VARCHAR" />
+    <result column="intestway" property="intestway" jdbcType="DECIMAL" />
+    <result column="intomarketroom" property="intomarketroom" jdbcType="INTEGER" />
+    <result column="martetaddress" property="martetaddress" jdbcType="VARCHAR" />
+    <result column="firstparvalue" property="firstparvalue" jdbcType="DECIMAL" />
+    <result column="parvalue" property="parvalue" jdbcType="DECIMAL" />
+    <result column="saveholdyear" property="saveholdyear" jdbcType="INTEGER" />
+    <result column="sparesaveholdyear" property="sparesaveholdyear" jdbcType="INTEGER" />
+    <result column="isconverttype" property="isconverttype" jdbcType="CHAR" />
+    <result column="isfundtypechange" property="isfundtypechange" jdbcType="CHAR" />
+    <result column="isforgninvest" property="isforgninvest" jdbcType="CHAR" />
+    <result column="isevaluate" property="isevaluate" jdbcType="CHAR" />
+    <result column="yhmngcode" property="yhmngcode" jdbcType="VARCHAR" />
+    <result column="yhbankcode" property="yhbankcode" jdbcType="VARCHAR" />
+    <result column="fxlevel_forsale" property="fxlevelForsale" jdbcType="INTEGER" />
+    <result column="issuebegindate" property="issuebegindate" jdbcType="DATE" />
+    <result column="createtimestamp" property="createtimestamp" jdbcType="VARCHAR" />
+    <result column="updatetimestamp" property="updatetimestamp" jdbcType="VARCHAR" />
+    <result column="removetag" property="removetag" jdbcType="CHAR" />
+    <result column="issingleshare" property="issingleshare" jdbcType="CHAR" />
+    <result column="isinitiative" property="isinitiative" jdbcType="CHAR" />
+    <result column="istof" property="istof" jdbcType="CHAR" />
+    <result column="isetf" property="isetf" jdbcType="CHAR" />
+    <result column="islof" property="islof" jdbcType="CHAR" />
+    <result column="fxlevel_bank_code" property="fxlevelBankCode" jdbcType="VARCHAR" />
+    <result column="intestway_ccb" property="intestwayCcb" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.example.demo.data.entity.FndProfile" >
+    insert into icsp_fnd_profile (yhcode, fundcode, marketcode, 
+      stockcodesh, stockcodesz, fundsname, 
+      spell, fundname, pactinuredate, 
+      estabdate, fundclosedate, estabscale, 
+      ccbestabscale, fundtype, transferagentmode, 
+      transactmode, operatemode, firstassetnetvalue, 
+      ccbfirstassetnetva, firstholdercount, ccbfirstholdercnt, 
+      enrolorgan, intestway, intomarketroom, 
+      martetaddress, firstparvalue, parvalue, 
+      saveholdyear, sparesaveholdyear, isconverttype, 
+      isfundtypechange, isforgninvest, isevaluate, 
+      yhmngcode, yhbankcode, fxlevel_forsale, 
+      issuebegindate, createtimestamp, updatetimestamp, 
+      removetag, issingleshare, isinitiative, 
+      istof, isetf, islof, fxlevel_bank_code, 
+      intestway_ccb)
+    values (#{yhcode,jdbcType=VARCHAR}, #{fundcode,jdbcType=CHAR}, #{marketcode,jdbcType=VARCHAR}, 
+      #{stockcodesh,jdbcType=VARCHAR}, #{stockcodesz,jdbcType=VARCHAR}, #{fundsname,jdbcType=VARCHAR}, 
+      #{spell,jdbcType=VARCHAR}, #{fundname,jdbcType=VARCHAR}, #{pactinuredate,jdbcType=DATE}, 
+      #{estabdate,jdbcType=DATE}, #{fundclosedate,jdbcType=DATE}, #{estabscale,jdbcType=DECIMAL}, 
+      #{ccbestabscale,jdbcType=DECIMAL}, #{fundtype,jdbcType=INTEGER}, #{transferagentmode,jdbcType=INTEGER}, 
+      #{transactmode,jdbcType=INTEGER}, #{operatemode,jdbcType=INTEGER}, #{firstassetnetvalue,jdbcType=DECIMAL}, 
+      #{ccbfirstassetnetva,jdbcType=DECIMAL}, #{firstholdercount,jdbcType=DECIMAL}, #{ccbfirstholdercnt,jdbcType=DECIMAL}, 
+      #{enrolorgan,jdbcType=VARCHAR}, #{intestway,jdbcType=DECIMAL}, #{intomarketroom,jdbcType=INTEGER}, 
+      #{martetaddress,jdbcType=VARCHAR}, #{firstparvalue,jdbcType=DECIMAL}, #{parvalue,jdbcType=DECIMAL}, 
+      #{saveholdyear,jdbcType=INTEGER}, #{sparesaveholdyear,jdbcType=INTEGER}, #{isconverttype,jdbcType=CHAR}, 
+      #{isfundtypechange,jdbcType=CHAR}, #{isforgninvest,jdbcType=CHAR}, #{isevaluate,jdbcType=CHAR}, 
+      #{yhmngcode,jdbcType=VARCHAR}, #{yhbankcode,jdbcType=VARCHAR}, #{fxlevelForsale,jdbcType=INTEGER}, 
+      #{issuebegindate,jdbcType=DATE}, #{createtimestamp,jdbcType=VARCHAR}, #{updatetimestamp,jdbcType=VARCHAR}, 
+      #{removetag,jdbcType=CHAR}, #{issingleshare,jdbcType=CHAR}, #{isinitiative,jdbcType=CHAR}, 
+      #{istof,jdbcType=CHAR}, #{isetf,jdbcType=CHAR}, #{islof,jdbcType=CHAR}, #{fxlevelBankCode,jdbcType=VARCHAR}, 
+      #{intestwayCcb,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.demo.data.entity.FndProfile" >
+    insert into icsp_fnd_profile
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="yhcode != null" >
+        yhcode,
+      </if>
+      <if test="fundcode != null" >
+        fundcode,
+      </if>
+      <if test="marketcode != null" >
+        marketcode,
+      </if>
+      <if test="stockcodesh != null" >
+        stockcodesh,
+      </if>
+      <if test="stockcodesz != null" >
+        stockcodesz,
+      </if>
+      <if test="fundsname != null" >
+        fundsname,
+      </if>
+      <if test="spell != null" >
+        spell,
+      </if>
+      <if test="fundname != null" >
+        fundname,
+      </if>
+      <if test="pactinuredate != null" >
+        pactinuredate,
+      </if>
+      <if test="estabdate != null" >
+        estabdate,
+      </if>
+      <if test="fundclosedate != null" >
+        fundclosedate,
+      </if>
+      <if test="estabscale != null" >
+        estabscale,
+      </if>
+      <if test="ccbestabscale != null" >
+        ccbestabscale,
+      </if>
+      <if test="fundtype != null" >
+        fundtype,
+      </if>
+      <if test="transferagentmode != null" >
+        transferagentmode,
+      </if>
+      <if test="transactmode != null" >
+        transactmode,
+      </if>
+      <if test="operatemode != null" >
+        operatemode,
+      </if>
+      <if test="firstassetnetvalue != null" >
+        firstassetnetvalue,
+      </if>
+      <if test="ccbfirstassetnetva != null" >
+        ccbfirstassetnetva,
+      </if>
+      <if test="firstholdercount != null" >
+        firstholdercount,
+      </if>
+      <if test="ccbfirstholdercnt != null" >
+        ccbfirstholdercnt,
+      </if>
+      <if test="enrolorgan != null" >
+        enrolorgan,
+      </if>
+      <if test="intestway != null" >
+        intestway,
+      </if>
+      <if test="intomarketroom != null" >
+        intomarketroom,
+      </if>
+      <if test="martetaddress != null" >
+        martetaddress,
+      </if>
+      <if test="firstparvalue != null" >
+        firstparvalue,
+      </if>
+      <if test="parvalue != null" >
+        parvalue,
+      </if>
+      <if test="saveholdyear != null" >
+        saveholdyear,
+      </if>
+      <if test="sparesaveholdyear != null" >
+        sparesaveholdyear,
+      </if>
+      <if test="isconverttype != null" >
+        isconverttype,
+      </if>
+      <if test="isfundtypechange != null" >
+        isfundtypechange,
+      </if>
+      <if test="isforgninvest != null" >
+        isforgninvest,
+      </if>
+      <if test="isevaluate != null" >
+        isevaluate,
+      </if>
+      <if test="yhmngcode != null" >
+        yhmngcode,
+      </if>
+      <if test="yhbankcode != null" >
+        yhbankcode,
+      </if>
+      <if test="fxlevelForsale != null" >
+        fxlevel_forsale,
+      </if>
+      <if test="issuebegindate != null" >
+        issuebegindate,
+      </if>
+      <if test="createtimestamp != null" >
+        createtimestamp,
+      </if>
+      <if test="updatetimestamp != null" >
+        updatetimestamp,
+      </if>
+      <if test="removetag != null" >
+        removetag,
+      </if>
+      <if test="issingleshare != null" >
+        issingleshare,
+      </if>
+      <if test="isinitiative != null" >
+        isinitiative,
+      </if>
+      <if test="istof != null" >
+        istof,
+      </if>
+      <if test="isetf != null" >
+        isetf,
+      </if>
+      <if test="islof != null" >
+        islof,
+      </if>
+      <if test="fxlevelBankCode != null" >
+        fxlevel_bank_code,
+      </if>
+      <if test="intestwayCcb != null" >
+        intestway_ccb,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="yhcode != null" >
+        #{yhcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fundcode != null" >
+        #{fundcode,jdbcType=CHAR},
+      </if>
+      <if test="marketcode != null" >
+        #{marketcode,jdbcType=VARCHAR},
+      </if>
+      <if test="stockcodesh != null" >
+        #{stockcodesh,jdbcType=VARCHAR},
+      </if>
+      <if test="stockcodesz != null" >
+        #{stockcodesz,jdbcType=VARCHAR},
+      </if>
+      <if test="fundsname != null" >
+        #{fundsname,jdbcType=VARCHAR},
+      </if>
+      <if test="spell != null" >
+        #{spell,jdbcType=VARCHAR},
+      </if>
+      <if test="fundname != null" >
+        #{fundname,jdbcType=VARCHAR},
+      </if>
+      <if test="pactinuredate != null" >
+        #{pactinuredate,jdbcType=DATE},
+      </if>
+      <if test="estabdate != null" >
+        #{estabdate,jdbcType=DATE},
+      </if>
+      <if test="fundclosedate != null" >
+        #{fundclosedate,jdbcType=DATE},
+      </if>
+      <if test="estabscale != null" >
+        #{estabscale,jdbcType=DECIMAL},
+      </if>
+      <if test="ccbestabscale != null" >
+        #{ccbestabscale,jdbcType=DECIMAL},
+      </if>
+      <if test="fundtype != null" >
+        #{fundtype,jdbcType=INTEGER},
+      </if>
+      <if test="transferagentmode != null" >
+        #{transferagentmode,jdbcType=INTEGER},
+      </if>
+      <if test="transactmode != null" >
+        #{transactmode,jdbcType=INTEGER},
+      </if>
+      <if test="operatemode != null" >
+        #{operatemode,jdbcType=INTEGER},
+      </if>
+      <if test="firstassetnetvalue != null" >
+        #{firstassetnetvalue,jdbcType=DECIMAL},
+      </if>
+      <if test="ccbfirstassetnetva != null" >
+        #{ccbfirstassetnetva,jdbcType=DECIMAL},
+      </if>
+      <if test="firstholdercount != null" >
+        #{firstholdercount,jdbcType=DECIMAL},
+      </if>
+      <if test="ccbfirstholdercnt != null" >
+        #{ccbfirstholdercnt,jdbcType=DECIMAL},
+      </if>
+      <if test="enrolorgan != null" >
+        #{enrolorgan,jdbcType=VARCHAR},
+      </if>
+      <if test="intestway != null" >
+        #{intestway,jdbcType=DECIMAL},
+      </if>
+      <if test="intomarketroom != null" >
+        #{intomarketroom,jdbcType=INTEGER},
+      </if>
+      <if test="martetaddress != null" >
+        #{martetaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="firstparvalue != null" >
+        #{firstparvalue,jdbcType=DECIMAL},
+      </if>
+      <if test="parvalue != null" >
+        #{parvalue,jdbcType=DECIMAL},
+      </if>
+      <if test="saveholdyear != null" >
+        #{saveholdyear,jdbcType=INTEGER},
+      </if>
+      <if test="sparesaveholdyear != null" >
+        #{sparesaveholdyear,jdbcType=INTEGER},
+      </if>
+      <if test="isconverttype != null" >
+        #{isconverttype,jdbcType=CHAR},
+      </if>
+      <if test="isfundtypechange != null" >
+        #{isfundtypechange,jdbcType=CHAR},
+      </if>
+      <if test="isforgninvest != null" >
+        #{isforgninvest,jdbcType=CHAR},
+      </if>
+      <if test="isevaluate != null" >
+        #{isevaluate,jdbcType=CHAR},
+      </if>
+      <if test="yhmngcode != null" >
+        #{yhmngcode,jdbcType=VARCHAR},
+      </if>
+      <if test="yhbankcode != null" >
+        #{yhbankcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fxlevelForsale != null" >
+        #{fxlevelForsale,jdbcType=INTEGER},
+      </if>
+      <if test="issuebegindate != null" >
+        #{issuebegindate,jdbcType=DATE},
+      </if>
+      <if test="createtimestamp != null" >
+        #{createtimestamp,jdbcType=VARCHAR},
+      </if>
+      <if test="updatetimestamp != null" >
+        #{updatetimestamp,jdbcType=VARCHAR},
+      </if>
+      <if test="removetag != null" >
+        #{removetag,jdbcType=CHAR},
+      </if>
+      <if test="issingleshare != null" >
+        #{issingleshare,jdbcType=CHAR},
+      </if>
+      <if test="isinitiative != null" >
+        #{isinitiative,jdbcType=CHAR},
+      </if>
+      <if test="istof != null" >
+        #{istof,jdbcType=CHAR},
+      </if>
+      <if test="isetf != null" >
+        #{isetf,jdbcType=CHAR},
+      </if>
+      <if test="islof != null" >
+        #{islof,jdbcType=CHAR},
+      </if>
+      <if test="fxlevelBankCode != null" >
+        #{fxlevelBankCode,jdbcType=VARCHAR},
+      </if>
+      <if test="intestwayCcb != null" >
+        #{intestwayCcb,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="findFundName" parameterType="java.lang.String" resultType="java.lang.String">
+    select fundName from icsp_fnd_profile where fundcode=#{fundCode}
+  </select>
+</mapper>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.data.mapper.FndManagerMapper" >
+  <resultMap id="BaseResultMap" type="com.example.demo.data.entity.FndManager" >
+    <result column="personid" property="personid" jdbcType="VARCHAR" />
+    <result column="yhcode" property="yhcode" jdbcType="VARCHAR" />
+    <result column="fundcode" property="fundcode" jdbcType="VARCHAR" />
+    <result column="positontype" property="positontype" jdbcType="VARCHAR" />
+    <result column="startdate" property="startdate" jdbcType="DATE" />
+    <result column="enddate" property="enddate" jdbcType="DATE" />
+    <result column="pubdate" property="pubdate" jdbcType="DATE" />
+    <result column="createtimestamp" property="createtimestamp" jdbcType="VARCHAR" />
+    <result column="updatetimestamp" property="updatetimestamp" jdbcType="VARCHAR" />
+    <result column="removetag" property="removetag" jdbcType="CHAR" />
+    <result column="fundgroup" property="fundgroup" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.example.demo.data.entity.FndManager" >
+    insert into icsp_fund_manager (personid, yhcode, fundcode, 
+      positontype, startdate, enddate, 
+      pubdate, createtimestamp, updatetimestamp, 
+      removetag, fundgroup)
+    values (#{personid,jdbcType=VARCHAR}, #{yhcode,jdbcType=VARCHAR}, #{fundcode,jdbcType=VARCHAR}, 
+      #{positontype,jdbcType=VARCHAR}, #{startdate,jdbcType=DATE}, #{enddate,jdbcType=DATE}, 
+      #{pubdate,jdbcType=DATE}, #{createtimestamp,jdbcType=VARCHAR}, #{updatetimestamp,jdbcType=VARCHAR}, 
+      #{removetag,jdbcType=CHAR}, #{fundgroup,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.demo.data.entity.FndManager" >
+    insert into icsp_fund_manager
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="personid != null" >
+        personid,
+      </if>
+      <if test="yhcode != null" >
+        yhcode,
+      </if>
+      <if test="fundcode != null" >
+        fundcode,
+      </if>
+      <if test="positontype != null" >
+        positontype,
+      </if>
+      <if test="startdate != null" >
+        startdate,
+      </if>
+      <if test="enddate != null" >
+        enddate,
+      </if>
+      <if test="pubdate != null" >
+        pubdate,
+      </if>
+      <if test="createtimestamp != null" >
+        createtimestamp,
+      </if>
+      <if test="updatetimestamp != null" >
+        updatetimestamp,
+      </if>
+      <if test="removetag != null" >
+        removetag,
+      </if>
+      <if test="fundgroup != null" >
+        fundgroup,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="personid != null" >
+        #{personid,jdbcType=VARCHAR},
+      </if>
+      <if test="yhcode != null" >
+        #{yhcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fundcode != null" >
+        #{fundcode,jdbcType=VARCHAR},
+      </if>
+      <if test="positontype != null" >
+        #{positontype,jdbcType=VARCHAR},
+      </if>
+      <if test="startdate != null" >
+        #{startdate,jdbcType=DATE},
+      </if>
+      <if test="enddate != null" >
+        #{enddate,jdbcType=DATE},
+      </if>
+      <if test="pubdate != null" >
+        #{pubdate,jdbcType=DATE},
+      </if>
+      <if test="createtimestamp != null" >
+        #{createtimestamp,jdbcType=VARCHAR},
+      </if>
+      <if test="updatetimestamp != null" >
+        #{updatetimestamp,jdbcType=VARCHAR},
+      </if>
+      <if test="removetag != null" >
+        #{removetag,jdbcType=CHAR},
+      </if>
+      <if test="fundgroup != null" >
+        #{fundgroup,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

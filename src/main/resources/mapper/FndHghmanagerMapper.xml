@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.data.mapper.FndHghmanagerMapper" >
+  <resultMap id="BaseResultMap" type="com.example.demo.data.entity.FndHghmanager" >
+    <result column="personid" property="personid" jdbcType="VARCHAR" />
+    <result column="yhmngcode" property="yhmngcode" jdbcType="VARCHAR" />
+    <result column="managerlevel" property="managerlevel" jdbcType="VARCHAR" />
+    <result column="startdate" property="startdate" jdbcType="DATE" />
+    <result column="enddate" property="enddate" jdbcType="DATE" />
+    <result column="namecn" property="namecn" jdbcType="VARCHAR" />
+    <result column="f_sname" property="fSname" jdbcType="VARCHAR" />
+    <result column="memo" property="memo" jdbcType="VARCHAR" />
+    <result column="chargefield" property="chargefield" jdbcType="VARCHAR" />
+    <result column="createtimestamp" property="createtimestamp" jdbcType="VARCHAR" />
+    <result column="updatetimestamp" property="updatetimestamp" jdbcType="VARCHAR" />
+    <result column="removetag" property="removetag" jdbcType="CHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.example.demo.data.entity.FndHghmanager" >
+    insert into icsp_fund_hghmanager (personid, yhmngcode, managerlevel, 
+      startdate, enddate, namecn, 
+      f_sname, memo, chargefield, 
+      createtimestamp, updatetimestamp, removetag
+      )
+    values (#{personid,jdbcType=VARCHAR}, #{yhmngcode,jdbcType=VARCHAR}, #{managerlevel,jdbcType=VARCHAR}, 
+      #{startdate,jdbcType=DATE}, #{enddate,jdbcType=DATE}, #{namecn,jdbcType=VARCHAR}, 
+      #{fSname,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR}, #{chargefield,jdbcType=VARCHAR}, 
+      #{createtimestamp,jdbcType=VARCHAR}, #{updatetimestamp,jdbcType=VARCHAR}, #{removetag,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.demo.data.entity.FndHghmanager" >
+    insert into icsp_fund_hghmanager
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="personid != null" >
+        personid,
+      </if>
+      <if test="yhmngcode != null" >
+        yhmngcode,
+      </if>
+      <if test="managerlevel != null" >
+        managerlevel,
+      </if>
+      <if test="startdate != null" >
+        startdate,
+      </if>
+      <if test="enddate != null" >
+        enddate,
+      </if>
+      <if test="namecn != null" >
+        namecn,
+      </if>
+      <if test="fSname != null" >
+        f_sname,
+      </if>
+      <if test="memo != null" >
+        memo,
+      </if>
+      <if test="chargefield != null" >
+        chargefield,
+      </if>
+      <if test="createtimestamp != null" >
+        createtimestamp,
+      </if>
+      <if test="updatetimestamp != null" >
+        updatetimestamp,
+      </if>
+      <if test="removetag != null" >
+        removetag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="personid != null" >
+        #{personid,jdbcType=VARCHAR},
+      </if>
+      <if test="yhmngcode != null" >
+        #{yhmngcode,jdbcType=VARCHAR},
+      </if>
+      <if test="managerlevel != null" >
+        #{managerlevel,jdbcType=VARCHAR},
+      </if>
+      <if test="startdate != null" >
+        #{startdate,jdbcType=DATE},
+      </if>
+      <if test="enddate != null" >
+        #{enddate,jdbcType=DATE},
+      </if>
+      <if test="namecn != null" >
+        #{namecn,jdbcType=VARCHAR},
+      </if>
+      <if test="fSname != null" >
+        #{fSname,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null" >
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="chargefield != null" >
+        #{chargefield,jdbcType=VARCHAR},
+      </if>
+      <if test="createtimestamp != null" >
+        #{createtimestamp,jdbcType=VARCHAR},
+      </if>
+      <if test="updatetimestamp != null" >
+        #{updatetimestamp,jdbcType=VARCHAR},
+      </if>
+      <if test="removetag != null" >
+        #{removetag,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
